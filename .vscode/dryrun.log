@@ -1,0 +1,9 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/arsalan/Work/PackformTask/entireProject/minnie-test'
+echo "\n\nCAREFULL!!!\n\nAssuming .env is having all environment variables set, using it for migrations and running servers\n\n"  &&  rm -rf /Users/arsalan/Work/PackformTask/entireProject/minnie-test/minnie-test-import-data-script/.env  /Users/arsalan/Work/PackformTask/entireProject/minnie-test/minnie-test-backend/.env && cp -r .env /Users/arsalan/Work/PackformTask/entireProject/minnie-test/minnie-test-import-data-script/ && cp -r .env /Users/arsalan/Work/PackformTask/entireProject/minnie-test/minnie-test-backend/
+cd /Users/arsalan/Work/PackformTask/entireProject/minnie-test/minnie-test-import-data-script && go get -d ./... && go run .
+cd /Users/arsalan/Work/PackformTask/entireProject/minnie-test/minnie-test-backend && go get -d ./...
+cd /Users/arsalan/Work/PackformTask/entireProject/minnie-test/minnie-test-frontend && rm -rf node_modules && npm install
+echo "\n\nNow generate and run fresh builds for both frontend and backend by \nmake run-fresh-build\n"
+make: Leaving directory `/Users/arsalan/Work/PackformTask/entireProject/minnie-test'
+ 
