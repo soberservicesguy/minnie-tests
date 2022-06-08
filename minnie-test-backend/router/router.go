@@ -3,7 +3,7 @@ package router
 import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
-	orderRoutes "github.com/soberservicesguy/minnie-test-backend/internals/routes"
+	orderRoutes "github.com/soberservicesguy/minnie-test-backend/internals/routes/orders"
 )
 
 func SetupRoutes(app *fiber.App) {
