@@ -11,7 +11,7 @@ import (
 
 func TestHandler(t *testing.T) {
 	app := fiber.New()
-	database.ConnectDB("../../.env")
+	database.ConnectDB("../../../.env")
 	app.Get("/p/:p/o/:o/s/:start/e/:end/s/:sortType/p/:page/c/:getCount", func(c *fiber.Ctx) error {
 		return orderHandler.GetOrders(c)
 	})

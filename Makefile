@@ -25,7 +25,8 @@ create-db-and-import-data:
 	cd $(MIGRATIONS_FOLDER) && go get -d ./... && go run .
 
 install-backend-packages:
-	cd $(BACK_END_DIR) && go get -d ./...
+	cd $(BACK_END_DIR) && go mod tidy && go get -d ./...
+	
 
 install-frontend-packages: 
 	cd $(FRONT_END_DIR) && rm -rf node_modules && npm install
@@ -52,7 +53,7 @@ clean-previous-builds:
 	rm -rf $(BACK_END_DIR)/frontend/* && rm -rf $(BACKEND_BUILD_DIR)/* && rm -rf $(FRONT_END_DIR)/dist/*
 
 run-backend-tests:
-	echo "\n\nBegninning to run backend unit tests\n\n" && cd $(BACK_END_DIR) && go test ./internals/routes/orders_test.go
+	echo "\n\nBegninning to run backend unit tests\n\n" && cd $(BACK_END_DIR) && go test ./internals/routes/orders/orders_test.go
 
 run-frontent-tests:
 	echo "\n\nBegninning to run frontend tests\n\n" && cd $(FRONT_END_DIR) && npm run test
